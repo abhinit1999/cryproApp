@@ -1,13 +1,24 @@
+import { BrowserRouter, Route,Routes } from 'react-router-dom';
 import './App.css';
+import Header from './Components/Header';
+import Coinpage from './Pages/Coinpage';
+import Homepage from './Pages/Homepage';
 
 function App() {
   return (
-    <div className="App">
-     <h1>Crypto Tracker App Started developing from today
-       and the best part is that I am learning React.js
-     </h1>
+    <BrowserRouter>
+    <div>
+      <Header/>
+     <Routes>
+
+    <Route path='/' element={<Homepage/>} exact></Route>
+    <Route path='/coins/:id' element={<Coinpage/>}></Route>
+     </Routes>
     </div>
+    </BrowserRouter>
   );
 }
+
+
 
 export default App;
